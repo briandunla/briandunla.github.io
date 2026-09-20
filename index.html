@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maya图霸天下-Maya三维建模与渲染技术深度解析平台</title>
+    <meta name="description" content="maya图霸天下专注于Maya三维软件技术分享，涵盖建模技巧、材质渲染、动画制作及行业实战教程，为3D艺术家提供专业的学习资源与灵感参考。">
+    <meta name="keywords" content="maya图霸天下,Maya教程,3D建模,三维动画,Maya渲染,CG艺术">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2b3a42;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .search-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2b3a42 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+        }
+
+        /* Feature List (Sidebar style) */
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '★';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
+            padding: 15px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .header-inner { padding: 0 10px; }
+            nav { display: none; } /* Simplified for mobile */
+            .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <!-- SVG Icon for Logo -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>Maya图霸天下</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">建模教程</a></li>
+                    <li><a href="#">材质渲染</a></li>
+                    <li><a href="#">动画制作</a></li>
+                    <li><a href="#">行业资讯</a></li>
+                    <li><a href="#">资源下载</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" onclick="alert('搜索功能即将上线')">搜索</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>掌握Maya核心技艺，在三维世界称霸</h1>
+        <p>从零基础入门到影视级特效制作，maya图霸天下为您提供最全的实战技巧、行业规范与灵感分享。</p>
+        <div class="cta-group">
+            <a href="#tutorials" class="btn btn-primary">开始学习</a>
+            <a href="#resources" class="btn btn-secondary">下载资源</a>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Quick Access / Categories -->
+        <section id="categories" style="margin-bottom: 50px;">
+            <div class="grid-4" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+                <div class="card" style="text-align: center; padding: 20px; box-shadow: none; background: transparent;">
+                    <div style="font-size: 2rem; color: var(--accent-color); margin-bottom: 10px;">🧊</div>
+                    <h3 style="font-size: 1rem;">基础建模</h3>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px; box-shadow: none; background: transparent;">
+                    <div style="font-size: 2rem; color: var(--accent-color); margin-bottom: 10px;">🎨</div>
+                    <h3 style="font-size: 1rem;">UV与贴图</h3>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px; box-shadow: none; background: transparent;">
+                    <div style="font-size: 2rem; color: var(--accent-color); margin-bottom: 10px;">✨</div>
+                    <h3 style="font-size: 1rem;">粒子特效</h3>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px; box-shadow: none; background: transparent;">
+                    <div style="font-size: 2rem; color: var(--accent-color); margin-bottom: 10px;">🎬</div>
+                    <h3 style="font-size: 1rem;">角色绑定</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Tutorials -->
+        <section id="tutorials" style="margin-bottom: 50px;">
+            <div class="section-header">
+                <h2 class="section-title">热门教程精选</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/maya1/400/250" alt="Maya角色建模教程" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">建模实战</span>
+                        <h3 class="card-title">Maya次世代角色建模完整流程详解</h3>
+                        <p class="card-desc">从低模雕刻到高模拓扑，再到UV展开与烘焙，手把手教你打造高精度游戏角色。</p>
+                        <div class="card-meta">
+                            <span>作者: CG大师</span>
+                            <span>3.2万次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/maya2/400/250" alt="Maya渲染技巧" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">渲染技巧</span>
+                        <h3 class="card-title">Arnold渲染器：如何制作电影级金属材质</h3>
+                        <p class="card-desc">深入理解反射率、粗糙度与次表面散射，掌握复杂的金属与玻璃材质制作技巧。</p>
+                        <div class="card-meta">
+                            <span>作者: 视觉工坊</span>
+                            <span>1.8万次浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/maya3/400/250" alt="Maya布料模拟" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">动画特效</span>
+                        <h3 class="card-title">Maya Cloth布料模拟系统完全指南</h3>
+                        <p class="card-desc">解决服装穿模问题，制作逼真的衣摆飘动效果，包含碰撞检测设置教程。</p>
+                        <div class="card-meta">
+                            <span>作者: 特效学院</span>
+                            <span>9,000次浏览</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Main Content Area: Sidebar + Articles -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 50px;">
+            
+            <!-- Latest Articles -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">最新行业动态</h2>
+                </div>
+                <div class="grid-3" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">行业资讯</span>
+                            <h3 class="card-title">2024年3D动画行业就业趋势分析</h3>
+                            <p class="card-desc">随着AI技术的发展，传统3D岗位的需求发生了怎样的变化？</p>
+                            <div class="card-meta">
+                                <span>2023-10-24</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">插件推荐</span>
+                            <h3 class="card-title">必备的Maya效率插件清单</h3>
+                            <p class="card-desc">整理了10款提高建模效率的神器，让你的工作事半功倍。</p>
+                            <div class="card-meta">
+                                <span>2023-10-20</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag">技巧分享</span>
+                            <h3 class="card-title">Maya快捷键自定义完全手册</h3>
+                            <p class="card-desc">如何打造一套适合自己的高效工作流？键盘映射是关键。</p>
+                            <div class="card-meta">
+                                <span>2023-10-15</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="card" style="padding: 20px; height: fit-content;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.1rem; color: var(--primary-color);">新手入门必读</h3>
+                    <ul class="feature-list">
+                        <li><a href="#">Maya界面布局详解</a></li>
+                        <li><a href="#">NexuS Maya版本选择指南</a></li>
+                        <li><a href="#">如何搭建高效的渲染农场</a></li>
+                        <li><a href="#">行业标准工作流程规范</a></li>
+                        <li><a href="#">常见报错代码对照表</a></li>
+                    </ul>
+                </div>
+
+                <div class="card" style="padding: 20px; margin-top: 20px;">
+                    <h3 style="margin-bottom: 15px; font-size: 1.1rem; color: var(--primary-color);">热门标签</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" style="font-size: 0.85rem; background: #eee; padding: 4px 10px; border-radius: 4px;">Maya建模</a>
+                        <a href="#" style="font-size: 0.85rem; background: #eee; padding: 4px 10px; border-radius: 4px;">SubD</a>
+                        <a href="#" style="font-size: 0.85rem; background: #eee; padding: 4px 10px; border-radius: 4px;">XGen</a>
+                        <a href="#" style="font-size: 0.85rem; background: #eee; padding: 4px 10px; border-radius: 4px;">Hair</a>
+                        <a href="#" style="font-size: 0.85rem; background: #eee; padding: 4px 10px; border-radius: 4px;">Mental Ray</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- FAQ Section -->
+        <section id="resources" style="margin-bottom: 50px;">
+            <div class="section-header">
+                <h2 class="section-title">常见问题与资源</h2>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">Maya图霸天下提供哪些类型的教程？</div>
+                <div class="faq-answer">
+                    我们专注于Maya软件的全方位技术分享，包括基础建模、角色制作、场景搭建、材质渲染、动画绑定以及特效制作。无论是初学者还是进阶从业者，都能在这里找到适合的学习资料。
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">如何下载Maya软件或破解补丁？</div>
+                <div class="faq-answer">
+                    请尊重知识产权，建议访问Autodesk官方网站或通过正规渠道购买授权。本站主要提供技术教程、插件资源及行业资讯，不涉及盗版软件下载。
+                </div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">教程中的场景文件在哪里下载？</div>
+                <div class="faq-answer">
+                    大部分高阶教程会在文章末尾提供Google Drive或百度网盘的链接，部分基础教程的素材包会包含在压缩包中。请留意文章底部的“资源下载”区域。
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>maya图霸天下</h3>
+                <p style="font-size: 0.9rem; line-height: 1.6;">致力于打造最专业的Maya技术社区，连接每一位3D艺术家的梦想与技艺。</p>
+            </div>
+            <div class="footer-col">
+                <h3>学习导航</h3>
+                <ul>
+                    <li><a href="#">基础入门</a></li>
+                    <li><a href="#">进阶提升</a></li>
+                    <li><a href="#">商业案例</a></li>
+                    <li><a href="#">每日练习</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>技术支持</h3>
+                <ul>
+                    <li><a href="#">联系站长</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">广告合作</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>订阅更新</h3>
+                <p style="font-size: 0.85rem; margin-bottom: 10px;">获取最新Maya教程推送</p>
+                <div style="display: flex;">
+                    <input type="email" placeholder="您的邮箱" style="padding: 8px; border: none; border-radius: 4px 0 0 4px; width: 100%;">
+                    <button style="padding: 8px 12px; background: var(--accent-color); border: none; color: white; border-radius: 0 4px 4px 0; cursor: pointer;">订阅</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Maya图霸天下 版权所有. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        function toggleFaq(element) {
+            // Close others (optional, keep for accordion effect)
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            // Toggle current
+            element.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
