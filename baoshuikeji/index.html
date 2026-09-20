@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>保税科技股票-股票行情分析、投资价值与风险提示</title>
+    <meta name="description" content="保税科技（600794）股票行情中心：提供实时股价、K线图、财务分析、行业地位及投资风险评估。深度解析保税科技主营业务、港口物流业务布局及市场表现，助您做出理性的投资决策。">
+    <meta name="keywords" content="保税科技股票,保税科技600794,保税科技行情,保税科技投资,保税科技财务,保税科技港口物流">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8e8;
+            --accent-color: #f39c12;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            margin-left: 8px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: #004494;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Stock Ticker Simulation */
+        .stock-ticker {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            margin-right: 40px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Main Content */
+        .stock-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .stock-title h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .stock-code {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .stock-price {
+            text-align: right;
+        }
+
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #d9534f;
+            font-family: 'Courier New', monospace;
+        }
+
+        .price-change {
+            font-size: 14px;
+            color: #d9534f;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 4px;
+        }
+
+        .price-up { color: #28a745; }
+        .price-down { color: #d9534f; }
+
+        /* Data Grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .data-item label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .data-item span {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Chart Placeholder */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            background-color: #f1f3f5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0, 86, 179, 0.2), transparent);
+        }
+
+        /* Company Profile */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .company-info p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Analysis Cards */
+        .analysis-card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .analysis-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .analysis-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .score-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-color) 0% 75%, #eee 75% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--bg-white);
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .data-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; height: auto; padding: 15px 0; gap: 15px; }
+            nav ul { gap: 15px; font-size: 14px; }
+            .hero h1 { font-size: 1.8rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .stock-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .stock-price { text-align: left; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .data-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                <span>股票分析网</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">行情中心</a></li>
+                    <li><a href="#">公司资料</a></li>
+                    <li><a href="#">深度研报</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">开户交易</a>
+        </div>
+    </header>
+
+    <!-- Stock Ticker -->
+    <div class="stock-ticker">
+        <div class="ticker-content">
+            <div class="ticker-item">上证指数 3,052.37 ▲ 0.45%</div>
+            <div class="ticker-item">深证成指 9,986.12 ▲ 0.62%</div>
+            <div class="ticker-item">创业板指 1,958.88 ▲ 0.88%</div>
+            <div class="ticker-item">保税科技 4.52 ▲ 1.25%</div>
+            <div class="ticker-item">上海港 12.34 ▼ 0.15%</div>
+            <div class="ticker-item">招商港口 11.88 ▲ 0.42%</div>
+            <div class="ticker-item">中远海控 7.56 ▼ 0.30%</div>
+            <div class="ticker-item">上证指数 3,052.37 ▲ 0.45%</div>
+            <div class="ticker-item">深证成指 9,986.12 ▲ 0.62%</div>
+            <div class="ticker-item">创业板指 1,958.88 ▲ 0.88%</div>
+            <div class="ticker-item">保税科技 4.52 ▲ 1.25%</div>
+            <div class="ticker-item">上海港 12.34 ▼ 0.15%</div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>保税科技股票</h1>
+                <p>全面解析保税科技（600794）的投资价值、港口物流业务布局及财务数据。为您提供客观、专业的股票分析参考。</p>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="#" class="cta-btn" style="background: white; color: var(--primary-color);">查看K线图</a>
+                    <a href="#" class="cta-btn" style="background: transparent; border: 1px solid white;">下载研报</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stock Info Section -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <!-- Main Stock Card -->
+                    <div class="stock-card">
+                        <div class="stock-header">
+                            <div class="stock-title">
+                                <h2>保税科技</h2>
+                                <div class="stock-code">代码：600794.SH | 所属：综合类</div>
+                            </div>
+                            <div class="stock-price">
+                                <div class="current-price">4.52</div>
+                                <div class="price-change price-up">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                                    +0.05 (1.12%)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-grid">
+                            <div class="data-item">
+                                <label>今开</label>
+                                <span>4.48</span>
+                            </div>
+                            <div class="data-item">
+                                <label>昨收</label>
+                                <span>4.47</span>
+                            </div>
+                            <div class="data-item">
+                                <label>最高</label>
+                                <span>4.55</span>
+                            </div>
+                            <div class="data-item">
+                                <label>最低</label>
+                                <span>4.44</span>
+                            </div>
+                            <div class="data-item">
+                                <label>成交量</label>
+                                <span>24.5万</span>
+                            </div>
+                            <div class="data-item">
+                                <label>成交额</label>
+                                <span>110.2万</span>
+                            </div>
+                            <div class="data-item">
+                                <label>市盈率(动)</label>
+                                <span>--</span>
+                            </div>
+                            <div class="data-item">
+                                <label>总市值</label>
+                                <span>25.8亿</span>
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <div class="chart-line"></div>
+                            <span style="position: relative; z-index: 2;">日K线走势图 (模拟数据)</span>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Sidebar -->
+                    <aside>
+                        <div class="stock-card" style="height: 100%;">
+                            <h3 style="margin-bottom: 20px;">综合评分</h3>
+                            <div class="text-center">
+                                <div class="score-circle">B+</div>
+                                <p style="font-size: 14px; color: #666;">基于基本面、技术面与市场情绪的综合评估</p>
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <h4 style="margin-bottom: 15px; font-size: 16px;">核心看点</h4>
+                                <ul style="font-size: 14px; color: #555;">
+                                    <li style="margin-bottom: 8px;">✅ 拥有保税港区核心牌照优势</li>
+                                    <li style="margin-bottom: 8px;">✅ 持续投入智能化仓储建设</li>
+                                    <li style="margin-bottom: 8px;">✅ 区域物流枢纽地位稳固</li>
+                                    <li style="margin-bottom: 8px;">✅ 股东结构相对稳定</li>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                                <h4 style="margin-bottom: 10px; font-size: 16px;">风险提示</h4>
+                                <p style="font-size: 13px; color: #d9534f; line-height: 1.6;">
+                                    1. 港口物流行业受宏观经济波动影响较大。<br>
+                                    2. 国际贸易形势变化可能导致业务量波动。<br>
+                                    3. 股价波动风险，请理性投资。
+                                </p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Profile -->
+        <section class="section" style="background-color: white;">
+            <div class="container">
+                <h2 class="section-title">公司概况</h2>
+                <div class="grid grid-2">
+                    <div class="company-info">
+                        <h3>保税科技（江苏）股份有限公司</h3>
+                        <p>保税科技（600794）是国内最早涉足保税物流园区的企业之一。公司依托江苏保税区（保税港区）的区位和政策优势，致力于打造国际一流的智慧型保税物流服务平台。主营业务涵盖保税仓储、国际货代、港口物流、进出口贸易及供应链金融等多元化服务。</p>
+                        <p>公司通过多年的发展，已建立起完善的保税物流产业链，为国内外客户提供“一站式”的物流解决方案。近年来，公司积极推动数字化转型，建设智能化仓储系统，提升运营效率，巩固其在长江流域保税物流市场的领先地位。</p>
+                        <div class="tag-cloud">
+                            <span class="tag">保税物流</span>
+                            <span class="tag">港口服务</span>
+                            <span class="tag">供应链金融</span>
+                            <span class="tag">智慧仓储</span>
+                            <span class="tag">上海自贸区</span>
+                        </div>
+                    </div>
+                    <div class="stock-card" style="background: var(--bg-light); border: none;">
+                        <h3 style="margin-bottom: 20px;">财务简表</h3>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 0; color: #666;">营业收入 (亿元)</td>
+                                <td style="padding: 10px 0; text-align: right; font-weight: 600;">8.45</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 0; color: #666;">净利润 (亿元)</td>
+                                <td style="padding: 10px 0; text-align: right; font-weight: 600;">0.82</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 0; color: #666;">毛利率 (%)</td>
+                                <td style="padding: 10px 0; text-align: right; font-weight: 600;">18.5%</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 10px 0; color: #666;">净资产收益率 (%)</td>
+                                <td style="padding: 10px 0; text-align: right; font-weight: 600;">5.2%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 0; color: #666;">总资产 (亿元)</td>
+                                <td style="padding: 10px 0; text-align: right; font-weight: 600;">35.6</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Analysis -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">投资分析</h2>
+                <div class="grid grid-3">
+                    <article class="analysis-card">
+                        <h3>行业地位</h3>
+                        <p>保税科技作为长江流域重要的保税物流枢纽，其核心资产“张家港保税港区”是中国目前政策最优惠、功能最齐全、区位优势最明显的保税物流园区之一。公司在保税仓储业务上具有极强的护城河，市场份额相对稳定。</p>
+                    </article>
+                    <article class="analysis-card">
+                        <h3>业务拓展</h3>
+                        <p>公司不仅局限于传统的仓储租赁，正积极向供应链上下游延伸。通过发展保税加工、大宗商品交易及供应链金融服务，公司正从单一的物流服务商向综合型供应链管理平台转型，打开了新的增长空间。</p>
+                    </article>
+                    <article class="analysis-card">
+                        <h3>技术升级</h3>
+                        <p>面对智慧物流的趋势，保税科技投入巨资升级IT系统，引入自动化分拣设备和物联网技术。这不仅降低了人力成本，还提高了作业效率和准确性，增强了应对未来市场竞争的能力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" style="background-color: white;">
+            <div class="container">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">保税科技的主营业务是什么？ <span>+</span></div>
+                        <div class="faq-answer">
+                            公司主要经营保税仓储、国际货运代理、港口物流、进出口贸易及供应链金融等业务。依托张家港保税港区，为国内外企业提供保税物流服务。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">保税科技的投资亮点有哪些？ <span>+</span></div>
+                        <div class="faq-answer">
+                            亮点在于其稀缺的保税区核心牌照资源、稳定的港口物流需求以及正在推进的智能化转型。公司具备区域垄断性的竞争优势。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何买卖保税科技股票？ <span>+</span></div>
+                        <div class="faq-answer">
+                            您需要通过国内合法的证券公司开设A股证券账户，在交易时间内通过股票交易软件进行买卖操作。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">该股票适合长期投资吗？ <span>+</span></div>
+                        <div class="faq-answer">
+                            这取决于您的风险偏好。保税科技作为公用事业属性较强的物流股，业绩相对稳健，但增长速度有限。建议结合宏观经济环境和行业周期进行判断。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 15px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                        <span style="color: white; margin-left: 8px;">股票分析网</span>
+                    </div>
+                    <p style="font-size: 14px; line-height: 1.6; opacity: 0.8;">
+                        专注于为投资者提供客观、及时的股票数据分析与资讯服务。我们不构成任何投资建议，市场有风险，投资需谨慎。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快捷链接</h4>
+                    <ul>
+                        <li><a href="#">新股申购</a></li>
+                        <li><a href="#">龙虎榜</a></li>
+                        <li><a href="#">资金流向</a></li>
+                        <li><a href="#">财报解读</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务条款</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">Cookie设置</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 股票分析网 版权所有. 本站所有数据仅供参考，不作为投资依据。
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
