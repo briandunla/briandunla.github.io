@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虐猫男不断收到花圈 - 社会热点事件追踪与反思</title>
+    <meta name="description" content="聚焦虐猫男不断收到花圈这一社会热点事件，探讨网络暴力、公众情绪与法律边界，记录事件全貌与后续发展。">
+    <meta name="keywords" content="虐猫男不断收到花圈,虐猫事件,网络暴力,社会热点,公众情绪">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 24px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Section */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 12px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 24px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--primary-color);
+        }
+
+        .hot-list {
+            list-style: none;
+        }
+
+        .hot-list li {
+            margin-bottom: 12px;
+        }
+
+        .hot-list a {
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hot-rank {
+            background-color: var(--accent-color);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Discussion Section */
+        .discussion-box {
+            background-color: #fff5f5;
+            border: 1px solid #ffcccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .discussion-box h3 {
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .discussion-box p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .header-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <span>⚡</span> 热点观察
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">事件追踪</a></li>
+                <li><a href="#">深度分析</a></li>
+                <li><a href="#">法律视角</a></li>
+                <li><a href="#">动物保护</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>虐猫男不断收到花圈</h1>
+    <p>从网络曝光到线下舆论风暴，这一极端个案折射出公众对生命尊严的底线捍卫。</p>
+    <div class="hero-tags">
+        <span class="tag">#社会热点</span>
+        <span class="tag">#网络舆论</span>
+        <span class="tag">#生命教育</span>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Left Column -->
+    <div class="content-area">
+        
+        <!-- Featured Article -->
+        <article class="article-card">
+            <img src="https://picsum.photos/seed/cats/800/400" alt="花圈与网络舆论" class="article-image">
+            <div class="article-body">
+                <div class="article-meta">
+                    <span>2023-10-27</span>
+                    <span>深度报道</span>
+                </div>
+                <h2 class="article-title">网络暴力还是正义的伸张？“虐猫男不断收到花圈”事件全记录</h2>
+                <p class="article-excerpt">
+                    近日，一名因虐猫行为被网络曝光的男性在现实生活中遭遇了意想不到的舆论反噬。据报道，该男子在社交平台发布虐猫视频后，不仅遭到网友的强烈谴责，更在现实生活中不断收到匿名送来的花圈。这一极端现象引发了关于网络暴力、公众情绪宣泄以及法律边界的广泛讨论。
+                </p>
+                <a href="#" class="read-more">阅读全文 &rarr;</a>
+            </div>
+        </article>
+
+        <!-- News List -->
+        <section>
+            <h3 class="section-title">最新动态</h3>
+            
+            <article class="article-card" style="display: flex; flex-direction: column; border: none; box-shadow: none; background: transparent;">
+                <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                    <img src="https://picsum.photos/seed/flower/150/100" alt="花圈" style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--primary-color);">匿名花圈不断送达，当事人疑似更换住址</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">据当地居民反映，涉事男子近期频繁搬家，疑似试图躲避持续不断的舆论压力。</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card" style="display: flex; flex-direction: column; border: none; box-shadow: none; background: transparent;">
+                <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+                    <img src="https://picsum.photos/seed/police/150/100" alt="警方介入" style="width: 120px; height: 80px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 8px; color: var(--primary-color);">警方提醒：请勿实施网络暴力或线下滋扰</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">针对“不断收到花圈”的情况，当地警方表示已关注到相关线索，呼吁公众通过合法途径表达诉求。</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Analysis Section -->
+        <section>
+            <h3 class="section-title">事件深度分析</h3>
+            <article class="article-card">
+                <div class="article-body">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 10px;">“花圈”作为一种舆论符号的异化</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 10px;">
+                        在传统语境中，花圈通常用于悼念逝者。然而，在此次事件中，它被作为一种“生前的诅咒”或“社会性死亡”的象征，被强行赋予了新的含义。这种符号的挪用，反映了公众对于虐猫行为无法容忍的愤怒，同时也揭示了网络舆论在向线下渗透时的激进倾向。
+                    </p>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary);">
+                        无论是支持者认为的“让其社会性死亡”，还是反对者担忧的“过激行为”，都指向同一个核心问题：在法律与道德之间，公众情绪的边界究竟在哪里？
+                    </p>
+                </div>
+            </article>
+        </section>
+
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar">
+        
+        <!-- Timeline Widget -->
+        <div class="sidebar-widget">
+            <h4 class="widget-title">事件时间线</h4>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">10月15日</div>
+                    <div class="timeline-title">虐猫视频在网络流传</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">10月16日</div>
+                    <div class="timeline-title">网友发起人肉搜索</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">10月18日</div>
+                    <div class="timeline-title">匿名花圈开始出现</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">10月22日</div>
+                    <div class="timeline-title">警方发布相关提醒</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hot Topics Widget -->
+        <div class="sidebar-widget">
+            <h4 class="widget-title">相关话题</h4>
+            <ul class="hot-list">
+                <li>
+                    <a href="#">
+                        <span>如何正确看待网络曝光</span>
+                        <span class="hot-rank">1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>虐猫行为是否应入刑</span>
+                        <span class="hot-rank">2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>动物保护法的立法进程</span>
+                        <span class="hot-rank">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>避免参与网络暴力</span>
+                        <span class="hot-rank">4</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Discussion Widget -->
+        <div class="sidebar-widget discussion-box">
+            <h3>⚖️ 观点交锋</h3>
+            <p><strong>支持方：</strong>“这种人就该让他身败名裂，花圈只是警告，让他知道社会不容忍这种恶行。”</p>
+            <p><strong>反对方：</strong>“送花圈是违法的，这是变相的恐吓和骚扰，法律必须严惩，不能让网络暴力凌驾于法律之上。”</p>
+        </div>
+
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于我们</h4>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
+                本站致力于客观、理性地报道社会热点事件，提供深度分析与多元视角，引导公众理性思考。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>栏目导航</h4>
+            <ul>
+                <li><a href="#">社会热点</a></li>
+                <li><a href="#">法治在线</a></li>
+                <li><a href="#">民生观察</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>法律声明</h4>
+            <ul>
+                <li><a href="#">免责声明</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 热点观察网. All Rights Reserved. 本页面内容仅供参考，不构成任何法律建议。
+    </div>
+</footer>
+
+</body>
+</html>
