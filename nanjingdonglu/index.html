@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南京东路二手房-优质房源推荐与买卖指南</title>
+    <meta name="description" content="本站提供南京东路二手房实时挂牌信息，涵盖老洋房、高层住宅及商业公寓，包含详细的房价走势、小区环境分析及购房政策解读。">
+    <meta name="keywords" content="南京东路二手房,上海南京东路房产,南京东路租房,南京东路房价,上海房产">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #ff9800;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 12px;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        .header-top span {
+            margin: 0 10px;
+        }
+
+        .header-main {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-dark);
+            padding: 22px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .hero-search {
+            flex: 1;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 450px;
+        }
+
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .search-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #e68900;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .count {
+            background-color: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .price-trend {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .trend-up {
+            color: #e74c3c;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trend-down {
+            color: #27ae60;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Listing Grid */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 6px 16px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .house-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .house-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .house-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.6);
+            color: var(--white);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .badge.urgent {
+            background-color: #e74c3c;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-address {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-address svg {
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            fill: var(--text-gray);
+        }
+
+        .card-features {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .card-features span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 800;
+            color: #e67e22;
+        }
+
+        .price span {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-gray);
+        }
+
+        .contact-btn {
+            font-size: 13px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--white);
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .guide-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .guide-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .guide-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .guide-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-color);
+        }
+
+        .guide-item h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .guide-item p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                display: none;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .header-main {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px;
+            }
+
+            .nav-menu {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+            }
+
+            .header-actions {
+                order: 2;
+            }
+
+            .guide-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .house-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <span>南京东路二手房 · 品质保障</span>
+            <span>7x24小时在线服务</span>
+        </div>
+        <div class="header-main">
+            <a href="#" class="logo">南京东路<span>房产网</span></a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">二手房</a>
+                <a href="#">新房</a>
+                <a href="#">租房</a>
+                <a href="#">商业地产</a>
+                <a href="#">资讯</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">免费发布</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>南京东路二手房交易首选平台</h1>
+                <p>专注南京东路及周边区域房产交易，汇聚海量真实房源，提供专业的买卖咨询与安全保障。</p>
+                <div class="hero-tags">
+                    <span class="tag">老洋房</span>
+                    <span class="tag">高层住宅</span>
+                    <span class="tag">商业公寓</span>
+                    <span class="tag">学区房</span>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>1,204</h3>
+                        <p>本月新增</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3.5万</h3>
+                        <p>在售房源</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12万+</h3>
+                        <p>累计成交</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-search">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label>房源类型</label>
+                        <select class="form-control">
+                            <option>全部类型</option>
+                            <option>住宅</option>
+                            <option>商铺</option>
+                            <option>别墅</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>区域选择</label>
+                        <select class="form-control">
+                            <option>南京东路全境</option>
+                            <option>黄浦区</option>
+                            <option>静安区</option>
+                            <option>虹口区</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>价格范围</label>
+                        <select class="form-control">
+                            <option>不限</option>
+                            <option>500万以下</option>
+                            <option>500万-1000万</option>
+                            <option>1000万以上</option>
+                        </select>
+                    </div>
+                    <button type="button" class="search-btn">立即搜索房源</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-container">
+        <aside>
+            <div class="sidebar-widget">
+                <div class="widget-title">房源分类</div>
+                <ul class="category-list">
+                    <li><a href="#">普通住宅 <span class="count">8,542</span></a></li>
+                    <li><a href="#">学区房 <span class="count">1,203</span></a></li>
+                    <li><a href="#">老洋房 <span class="count">156</span></a></li>
+                    <li><a href="#">投资型公寓 <span class="count">320</span></a></li>
+                    <li><a href="#">沿街商铺 <span class="count">89</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-title">南京东路房价走势</div>
+                <div class="price-trend">
+                    <span class="trend-up">↑ 1.2%</span>
+                    <span style="font-size: 12px; color: #999;">较上月</span>
+                </div>
+                <div style="margin-top: 10px; height: 100px; display: flex; align-items: flex-end; gap: 5px;">
+                    <div style="width: 20%; height: 40%; background: #ddd;"></div>
+                    <div style="width: 20%; height: 55%; background: #ddd;"></div>
+                    <div style="width: 20%; height: 45%; background: #ddd;"></div>
+                    <div style="width: 20%; height: 70%; background: var(--primary-color);"></div>
+                    <div style="width: 20%; height: 85%; background: var(--primary-color);"></div>
+                </div>
+                <p style="font-size: 12px; color: #666; margin-top: 10px;">参考均价：12.5万/㎡</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <div class="widget-title">服务承诺</div>
+                <ul class="category-list" style="font-size: 13px; color: #666;">
+                    <li style="padding: 10px 0; border: none;">✔ 房源真实有效</li>
+                    <li style="padding: 10px 0; border: none;">✔ 交易资金监管</li>
+                    <li style="padding: 10px 0; border: none;">✔ 专业律师审核</li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="content-area">
+            <div class="section-header">
+                <h2 class="section-title">南京东路热门推荐</h2>
+                <div style="display: flex; gap: 10px;">
+                    <button class="filter-btn active">最新上架</button>
+                    <button class="filter-btn">价格最低</button>
+                    <button class="filter-btn">价格最高</button>
+                </div>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn">两室一厅</button>
+                <button class="filter-btn">三室一厅</button>
+                <button class="filter-btn">急售</button>
+                <button class="filter-btn">满五唯一</button>
+            </div>
+
+            <div class="house-grid">
+                <!-- House Card 1 -->
+                <article class="house-card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/nanjing1/400/300" alt="南京东路二手房房源图片">
+                        <span class="badge urgent">急售</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">南京东路地铁站旁 2室1厅 精装拎包入住</h3>
+                        <div class="card-address">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            黄浦区南京东路街道 · 距离地铁2号线200米
+                        </div>
+                        <div class="card-features">
+                            <span>88㎡</span>
+                            <span>南向</span>
+                            <span>高层/29层</span>
+                            <span>2003年</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">650<span>万</span></div>
+                            <a href="#" class="contact-btn">联系看房</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- House Card 2 -->
+                <article class="house-card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/nanjing2/400/300" alt="南京东路二手房房源图片">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">南京东路核心地段 豪华三居室 视野开阔</h3>
+                        <div class="card-address">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            黄浦区南京东路街道 · 近外滩
+                        </div>
+                        <div class="card-features">
+                            <span>142㎡</span>
+                            <span>南北通透</span>
+                            <span>中层/18层</span>
+                            <span>2010年</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">1250<span>万</span></div>
+                            <a href="#" class="contact-btn">联系看房</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- House Card 3 -->
+                <article class="house-card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/nanjing3/400/300" alt="南京东路二手房房源图片">
+                        <span class="badge">满五唯一</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">南京东路老洋房 独门独院 产权清晰</h3>
+                        <div class="card-address">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            黄浦区南京东路街道 · 近第一百货
+                        </div>
+                        <div class="card-features">
+                            <span>120㎡</span>
+                            <span>花园</span>
+                            <span>低层/3层</span>
+                            <span>1995年</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">2100<span>万</span></div>
+                            <a href="#" class="contact-btn">联系看房</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- House Card 4 -->
+                <article class="house-card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/nanjing4/400/300" alt="南京东路二手房房源图片">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">南京东路精装小户型 自住首选</h3>
+                        <div class="card-address">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            黄浦区南京东路街道
+                        </div>
+                        <div class="card-features">
+                            <span>55㎡</span>
+                            <span>朝南</span>
+                            <span>中层/15层</span>
+                            <span>2008年</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price">420<span>万</span></div>
+                            <a href="#" class="contact-btn">联系看房</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="guide-section">
+        <div class="guide-container">
+            <div class="section-header">
+                <h2 class="section-title">购房指南</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    </div>
+                    <h3>南京东路二手房交易流程</h3>
+                    <p>从看房、签约、贷款过户到交房，为您详细梳理每一步操作要点与注意事项。</p>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/></svg>
+                    </div>
+                    <h3>税费计算与避坑指南</h3>
+                    <p>如何计算契税、个税与增值税？掌握关键节点，避免交易中的隐形费用。</p>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                    </div>
+                    <h3>如何判断小区价值</h3>
+                    <p>从物业管理、周边配套、历史成交记录等多维度分析，帮您做出明智决策。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">合作伙伴</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务支持</h4>
+                <ul>
+                    <li><a href="#">购房流程</a></li>
+                    <li><a href="#">二手房指南</a></li>
+                    <li><a href="#">租房指南</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>房产服务</h4>
+                <ul>
+                    <li><a href="#">二手房买卖</a></li>
+                    <li><a href="#">房屋租赁</a></li>
+                    <li><a href="#">新房楼盘</a></li>
+                    <li><a href="#">商业地产</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">手机App下载</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 南京东路房产网 版权所有 | 本站信息仅供参考，具体以实际为准</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
